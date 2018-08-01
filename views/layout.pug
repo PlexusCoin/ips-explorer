@@ -27,7 +27,7 @@ html
         $('##{active}').addClass('active');
         function update_stats(){
           $.ajax({url: '/ext/summary', success: function(json){
-            $("#supply").text(json.data[0].supply);
+            $("#supply").text(json.data[0].supply.toLocaleString());
             $("#masternodeCountOnline").text(json.data[0].masternodeCountOnline);
             $("#masternodeCountOffline").text(json.data[0].masternodeCountOffline);
             $("#difficulty").text(json.data[0].difficulty);
@@ -264,7 +264,7 @@ html
         ul.nav
           li.text-center(style='margin-left:80px;margin-right:80px;')
             p(style='margin-top:15px;')
-              a.navbar-link(href='https://github.com/ipsum-network/ips-explorer', target='_blank')= t("layout.footer.ips_network")
+              a.navbar-link(href='https://github.com/plexuscoin/explorer', target='_blank')= t("layout.footer.plexuscoin")
       span.connections
         label#lblBlockcount.label.label-default -
         label#lblConnections.label.label-default -
