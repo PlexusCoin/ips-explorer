@@ -1,0 +1,185 @@
+/*
+  This file must be valid JSON. But comments are allowed
+
+  Please edit settings.json, not settings.json.template
+*/
+{
+  // name your instance!
+  "title": "Plexus explorer",
+
+  "address": "127.0.0.1:3001",
+
+  // coin name
+  "coin": "Plexus",
+
+  // coin symbol
+  "symbol": "PLXS",
+
+ // language settings
+  "languages" : ["de","es","fr","us"],
+  "language_fallback" : "us",
+  
+  // logo
+  "logo": "/images/logo.png",
+
+  // favicon
+  "favicon": "public/favicon.ico",
+
+  // Uses bootswatch themes (http://bootswatch.com/)
+  // Valid options:
+  //     Cerulean, Cosmo, Cyborg, Darkly, Flatly, Journal, Lumen, Paper,
+  //     Readable, Sandstone, Simplex, Slate, Spacelab, Superhero, United, Yeti
+  // theme (see /public/themes for available themes)
+  "theme": "Cerulean",
+
+  // port to listen for requests on.
+  "port" : 3001,
+
+  // database settings (MongoDB)
+  "dbsettings": {
+    "user": "ciquidus",
+    "password": "3xp!067R",
+    "database": "explorerdb",
+    "address": "localhost",
+    "port": 27017
+  },
+
+  //update script settings
+  "update_timeout": 10,
+  "check_timeout": 250,
+
+  // wallet settings
+  "wallet": {
+    "host": "localhost",
+    "port": 31002,
+    "user": "l3JdTvePbc",
+    "pass": "BQPX0JAPe7oVHuu3uRi2Uo"
+  },
+
+  // confirmations
+  "confirmations": 30,
+
+  // language settings
+  "locale": "locale/en.json",
+
+  // menu settings
+  "display": {
+    "api": true,
+    "markets": true,
+    "richlist": true,
+    "twitter": false,
+    "facebook": false,
+    "googleplus": false,
+    "bitcointalk": false,
+    "website": true,
+    "slack": false,
+    "github": true,
+    "discord": true,
+    "search": true,
+    "movement": true,
+    "network": true,
+    "masternodes":true
+  },
+
+  // index page (valid options for difficulty are POW, POS or Hybrid)
+  "index": {
+    "show_hashrate": true,
+    "difficulty": "POW",
+    "last_txs": 100
+  },
+
+  // ensure links on API page are valid
+  "api": {
+    "blockindex": 70174,
+    "blockhash": "4200d845ae67a29e8b80f1ab4c09302ffa3bba9c71375ede49c565c0989ab2af",
+    "txhash": "15b8410545519c09d17d20db1de877543ea8f4aa8a020037d5099c83ac12af38",
+    "address": "PNr5jGce7F2xLz3BWZ6MCW1bCUocDmJ2SS"
+  },
+
+  // market settings
+  //supported markets: bittrex, poloniex, yobit, empoex, bleutrade, cryptopia, ccex, coinexchange, gravix
+  //                   crex24
+  //default market is loaded by default and determines last price in header
+  "markets": {
+    "coin": "PLXS",
+    "exchange": "BTC",
+    "enabled": ["graviex"],
+    "cryptopia_id": "2186",
+    "ccex_key" : "Get-Your-Own-Key",
+    "coinexchange_id": "18",
+    "default": "graviex"
+  },
+
+  // richlist/top100 settings
+  "richlist": {
+    "distribution": true,
+    "received": true,
+    "balance": true
+  },
+
+  // movement page settings
+  // min amount: show transactions greater than this value
+  // low flag: greater than this value flagged yellow
+  // high flag: greater than this value flagged red
+  "movement": {
+    "min_amount": 100,
+    "low_flag": 1000,
+    "high_flag": 5000
+  },
+
+  // Peers page settings
+  // ipstack_api_key: ipstack.com Geo IP. This is the replacement of http://freegeoip.net You need an API Key for the Requests 
+  "peers": {
+    "ipstack_api_key": "7996c567a36be5f205b70c6437a8382e"
+  },
+
+  // twitter, facebook, googleplus, bitcointalk, github, slack, website
+  "twitter": "altcuim",
+  "facebook": "yourfacebookpage",
+  "googleplus": "yourgooglepluspage",
+  "bitcointalk": "yourbitcointalktopicvalue",
+  "github": "plexuscoin/plexus",
+  "discord": "https://discord.gg/82er5Qh",
+  "slack": "yourfullslackinviteurl",
+  "website": "https://plexuscoin.org",
+
+  //genesis
+  "genesis_tx": "fa6ef9872494fa9662cf0fecf8c0135a6932e76d7a8764e1155207f3205c7c88",
+  "genesis_block": "00000f639db5734b2b861ef8dbccc33aebd7de44d13de000a12d093bcc866c64",
+
+  //heavy (enable/disable additional heavy features)
+  "heavy": false,
+
+  //amount of txs to index per address (stores latest n txs)
+  "txcount": 100,
+
+  //show total sent & received on address page (set false if PoS)
+  "show_sent_received": true,
+
+  // how to calculate current coin supply
+  // COINBASE : total sent from coinbase (PoW)
+  // GETINFO : retreive from getinfo api call (PoS)
+  // HEAVY: retreive from heavys getsupply api call
+  // BALANCES : total of all address balances
+  // TXOUTSET : retreive from gettxoutsetinfo api call
+  "supply": "TXOUTSET",
+
+  // how to acquire network hashrate
+  // getnetworkhashps: uses getnetworkhashps api call, returns in GH/s
+  // netmhashps: uses getmininginfo.netmhashpsm returns in MH/s
+  "nethash": "getnetworkhashps",
+
+  // nethash unitd: sets nethash API return units
+  // valid options: "P" (PH/s), "T" (TH/s), "G" (GH/s), "M" (MH/s), "K" (KH/s)
+  "nethash_units": "G",
+
+  // Address labels
+  // example : "CGTta3M4t3yXu8uRgkKvaWd2d8DQvDPnpL": {"label": "This is a burn address", "type":"danger", "url":"http://example.com"}
+  // label (required) = test to display
+  // type (optional) = class of label, valid types: default, primary, warning, danger, success
+  // url (optional) = url to link to for more information
+  "labels": {
+    "PDwBxTC8CMmK58CTTm6Na5VEMyJuBHfjZ7": {"label": "Developers", "type":"primary", "url":"http://plexuscoin.org"}
+  //  "CaxX1HVWzbQ516w61XbtHR63vNmp2mvLMZ": {"label": "Max Lee War Chest"}
+  }
+}
